@@ -6,6 +6,7 @@ import Welcome from '@/components/Welcome.vue'
 import Users from '@/components/user/Users.vue'
 import Rights from '@/components/power/Rights.vue'
 import Roles from '@/components/power/Roles.vue'
+import Cate from '@/components/goods/Cate.vue'
 
 Vue.use(VueRouter)
 
@@ -20,7 +21,8 @@ const router = new VueRouter({
         { path: '/welcome', component: Welcome },
         { path: '/users', component: Users, meta: ['用户管理', '用户列表'] },
         { path: '/rights', component: Rights, meta: ['权限管理', '权限列表'] },
-        { path: '/roles', component: Roles, meta: ['权限管理', '角色列表'] }
+        { path: '/roles', component: Roles, meta: ['权限管理', '角色列表'] },
+        { path: '/categories', component: Cate, meta: ['商品管理', '商品分类'] }
 
       ],
       redirect: '/welcome'
