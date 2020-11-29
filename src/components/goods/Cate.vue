@@ -25,6 +25,7 @@
           <el-tag v-else-if="scope.row.cat_level === 1" type="success" size="mini">二级</el-tag>
           <el-tag v-else type="warning" size="mini">三级</el-tag>
         </template>
+        <!-- 操作 -->
         <template  slot="opt">
           <el-button size="mini" type="primary" icon="el-icon-edit">编辑</el-button>
           <el-button size="mini" type="danger" icon="el-icon-delete">删除</el-button>
@@ -189,7 +190,6 @@ export default {
         this.addCateForm.cat_pid = this.selectedKeys[this.selectedKeys.length - 1]
         // 为当前分类的等级赋值
         this.addCateForm.cat_level = this.selectedKeys.length
-        console.log(this.selectedKeys)
         return false
       } else {
         this.addCateForm.cat_pid = 0
