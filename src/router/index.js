@@ -8,6 +8,8 @@ import Rights from '@/components/power/Rights.vue'
 import Roles from '@/components/power/Roles.vue'
 import Cate from '@/components/goods/Cate.vue'
 import Params from '@/components/goods/Params.vue'
+import GoodsList from '@/components/goods/List.vue'
+import Add from '@/components/goods/Add.vue'
 
 Vue.use(VueRouter)
 
@@ -24,7 +26,9 @@ const router = new VueRouter({
         { path: '/rights', component: Rights, meta: ['权限管理', '权限列表'] },
         { path: '/roles', component: Roles, meta: ['权限管理', '角色列表'] },
         { path: '/categories', component: Cate, meta: ['商品管理', '商品分类'] },
-        { path: '/params', component: Params, meta: ['商品管理', '参数管理'] }
+        { path: '/params', component: Params, meta: ['商品管理', '参数管理'] },
+        { path: '/goods', component: GoodsList, meta: ['商品管理', '商品列表'] },
+        { path: '/goods/add', component: Add, meta: ['商品管理', '添加商品'] }
       ],
       redirect: '/welcome'
     }
