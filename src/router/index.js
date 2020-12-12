@@ -10,6 +10,7 @@ import Cate from '@/components/goods/Cate.vue'
 import Params from '@/components/goods/Params.vue'
 import GoodsList from '@/components/goods/List.vue'
 import Add from '@/components/goods/Add.vue'
+import Order from '@/components/order/Order.vue'
 
 Vue.use(VueRouter)
 
@@ -28,7 +29,8 @@ const router = new VueRouter({
         { path: '/categories', component: Cate, meta: ['商品管理', '商品分类'] },
         { path: '/params', component: Params, meta: ['商品管理', '参数管理'] },
         { path: '/goods', component: GoodsList, meta: ['商品管理', '商品列表'] },
-        { path: '/goods/add', component: Add, meta: ['商品管理', '添加商品'] }
+        { path: '/goods/add', component: Add, meta: ['商品管理', '添加商品'] },
+        { path: '/orders', component: Order, meta: ['订单管理', '订单列表'] }
       ],
       redirect: '/welcome'
     }

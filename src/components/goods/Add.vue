@@ -2,6 +2,7 @@
   <div>
     <!-- 面包屑导航区域 -->
     <breadcrumb></breadcrumb>
+    <!-- 卡片视图区域 -->
     <el-card>
       <el-alert
         title="编辑商品信息"
