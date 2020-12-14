@@ -1,0 +1,77 @@
+<template>
+  <div>
+    <!-- 面包屑导航区域 -->
+    <breadcrumb></breadcrumb>
+    <!-- 卡片视图区域 -->
+    <el-card>
+      <div id="main" style="width: 800px;height:400px;"></div>
+    </el-card>
+  </div>
+</template>
+
+<script>
+
+import Breadcrumb from '@/components/Breadcrumb.vue'
+import echarts from 'echarts'
+import _ from 'loadsh'
+
+export default {
+  components: {
+    Breadcrumb
+  },
+  data() {
+    return {
+      // 需要合并的图表数据
+      options: {
+        title: {
+          text: '用户来源'
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'cross',
+            label: {
+              backgroundColor: '#E9EEF3'
+            }
+          }
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: [
+          {
+            boundaryGap: false
+          }
+        ],
+        yAxis: [
+          {
+            type: 'value'
+          }
+        ]
+      }
+    }
+  },
+  created() {
+  },
+  async mounted() {
+    const myChart = echarts.init(document.getElementById('main'))
+
+    const { data: res } = await this.$http.get('reports/type/1')
+
+    if (res.meta.status !== 200) {
+      return this.$message.error('获取折线图数据失败!')
+    }
+
+    const result = _.merge(res.data, this.options)
+    myChart.setOption(result)
+  },
+  methods: {
+  }
+}
+</script>
+
+<style lang="less" scoped>
+</style>

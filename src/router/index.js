@@ -11,6 +11,7 @@ import Params from '@/components/goods/Params.vue'
 import GoodsList from '@/components/goods/List.vue'
 import Add from '@/components/goods/Add.vue'
 import Order from '@/components/order/Order.vue'
+import Report from '@/components/report/Report.vue'
 
 Vue.use(VueRouter)
 
@@ -30,7 +31,8 @@ const router = new VueRouter({
         { path: '/params', component: Params, meta: ['商品管理', '参数管理'] },
         { path: '/goods', component: GoodsList, meta: ['商品管理', '商品列表'] },
         { path: '/goods/add', component: Add, meta: ['商品管理', '添加商品'] },
-        { path: '/orders', component: Order, meta: ['订单管理', '订单列表'] }
+        { path: '/orders', component: Order, meta: ['订单管理', '订单列表'] },
+        { path: '/reports', component: Report, meta: ['数据统计', '数据报表'] }
       ],
       redirect: '/welcome'
     }
