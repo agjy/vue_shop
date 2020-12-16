@@ -30,7 +30,7 @@
                 <!-- 二级菜单 -->
                 <el-menu-item
                   v-for="subItem in item.children"
-                  :index="subItem.path + ''"
+                  :index="'/' + subItem.path"
                   :key="subItem.id"
                   @click="saveNavState(subItem.path)">
                   <template slot="title">
