@@ -13,7 +13,7 @@
 
 import Breadcrumb from '@/components/Breadcrumb.vue'
 import echarts from 'echarts'
-import _ from 'loadsh'
+import _ from 'lodash'
 
 export default {
   components: {
@@ -64,7 +64,7 @@ export default {
     if (res.meta.status !== 200) {
       return this.$message.error('获取折线图数据失败!')
     }
-
+    console.log(_)
     const result = _.merge(res.data, this.options)
     myChart.setOption(result)
   },

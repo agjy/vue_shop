@@ -85,7 +85,7 @@
 </template>
 
 <script>
-import _ from 'loadsh'
+import _ from 'lodash'
 import Breadcrumb from '@/components/Breadcrumb.vue'
 export default {
   components: {
