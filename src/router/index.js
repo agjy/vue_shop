@@ -21,9 +21,11 @@ const Cate = () => import(/* webpackChunkName: "cate_params" */ '@/components/go
 const Params = () => import(/* webpackChunkName: "cate_params" */ '@/components/goods/Params.vue')
 
 // import GoodsList from '@/components/goods/List.vue'
-const GoodsList = () => import(/* webpackChunkName: "goodslist_add" */ '@/components/goods/List.vue')
+const GoodsList = () => import(/* webpackChunkName: "goodslist_add_edit" */ '@/components/goods/List.vue')
 // import Add from '@/components/goods/Add.vue'
-const Add = () => import(/* webpackChunkName: "goodslist_add" */ '@/components/goods/Add.vue')
+const Add = () => import(/* webpackChunkName: "goodslist_add_edit" */ '@/components/goods/Add.vue')
+// import Edit from '@/components/goods/Edit.vue'
+const Edit = () => import(/* webpackChunkName: "goodslist_add_edit" */ '@/components/goods/Edit.vue')
 
 // import Order from '@/components/order/Order.vue'
 const Order = () => import(/* webpackChunkName: "order_report" */ '@/components/order/Order.vue')
@@ -48,6 +50,7 @@ const router = new VueRouter({
         { path: '/params', component: Params, meta: ['商品管理', '参数管理'] },
         { path: '/goods', component: GoodsList, meta: ['商品管理', '商品列表'] },
         { path: '/goods/add', component: Add, meta: ['商品管理', '添加商品'] },
+        { path: '/goods/edit/:id', component: Edit, meta: ['商品管理', '修改商品'] },
         { path: '/orders', component: Order, meta: ['订单管理', '订单列表'] },
         { path: '/reports', component: Report, meta: ['数据统计', '数据报表'] }
       ],

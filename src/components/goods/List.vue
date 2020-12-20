@@ -25,7 +25,7 @@
         </el-table-column>
         <el-table-column label="操作" width="180px">
           <template slot-scope="scope">
-            <el-button type="primary" icon="el-icon-edit" size="mini">编辑</el-button>
+            <el-button type="primary" icon="el-icon-edit" size="mini" @click="goEditpage(scope.row.goods_id)">编辑</el-button>
             <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeById(scope.row.goods_id)">删除</el-button>
           </template>
         </el-table-column>
@@ -77,8 +77,6 @@ export default {
         return this.$message.error('获取商品列表失败！')
       }
 
-      this.$message.success('获取商品列表成功！')
-      console.log(res.data)
       this.goodsList = res.data.goods
       this.total = res.data.total
     },
@@ -108,6 +106,9 @@ export default {
     },
     goAddpage() {
       this.$router.push('/goods/add')
+    },
+    goEditpage(id) {
+      this.$router.push('/goods/edit/' + id)
     }
   }
 }
