@@ -96,7 +96,7 @@ export default {
       }).then(async () => {
         const { data: res } = await this.$http.delete(`goods/${id}`)
         if (res.meta.status !== 200) {
-          this.$message.error('商品删除失败!')
+          return this.$message.error('商品删除失败!')
         }
         this.$message.success('商品删除成功!')
         this.getGoodsList()
